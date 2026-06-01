@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shahzaib - Shop</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#5516be",
+                      "inverse-surface": "#e5e2e1",
+                      "outline-variant": "#414755",
+                      "secondary": "#d0bcff",
+                      "electric-glow": "rgba(0, 122, 255, 0.4)",
+                      "secondary-container": "#571bc1",
+                      "surface-container-highest": "#353534",
+                      "primary-fixed": "#d8e2ff",
+                      "inverse-primary": "#005bc1",
+                      "on-background": "#e5e2e1",
+                      "surface-variant": "#353534",
+                      "text-muted": "#A1A1AA",
+                      "primary": "#adc6ff",
+                      "surface-container-low": "#1c1b1b",
+                      "outline": "#8b90a0",
+                      "surface-container": "#201f1f",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313030",
+                      "background": "#131313",
+                      "on-secondary": "#3c0091",
+                      "on-surface-variant": "#c1c6d7",
+                      "surface": "#131313",
+                      "on-error-container": "#ffdad6",
+                      "surface-dim": "#131313",
+                      "secondary-fixed": "#e9ddff",
+                      "on-secondary-fixed": "#23005c",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-secondary-container": "#c4abff",
+                      "on-tertiary-container": "#002f38",
+                      "on-primary-container": "#00285c",
+                      "glass-surface": "rgba(255, 255, 255, 0.03)",
+                      "on-primary": "#002e69",
+                      "on-tertiary": "#003640",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "error-container": "#93000a",
+                      "primary-container": "#4b8eff",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "on-surface": "#e5e2e1",
+                      "tertiary-container": "#009eb9",
+                      "tertiary": "#4cd7f6",
+                      "on-tertiary-fixed": "#001f26",
+                      "tertiary-fixed": "#acedff",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-bright": "#3a3939",
+                      "surface-container-high": "#2a2a2a",
+                      "glass-border": "rgba(255, 255, 255, 0.1)",
+                      "on-error": "#690005",
+                      "on-primary-fixed": "#001a41",
+                      "surface-tint": "#adc6ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-2xl": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "body-lg": ["Inter"],
+                      "button": ["Inter"],
+                      "label-caps": ["JetBrains Mono"],
+                      "display-lg-mobile": ["Hanken Grotesk"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-2xl": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                      "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                      "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                      "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                      "button": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                      "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                      "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                      "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Custom Styles for Effects */
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        
+        .parallax-bg {
+            position: fixed;
+            top: -10%; left: -10%; right: -10%; bottom: -10%;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 122, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(208, 188, 255, 0.03) 0%, transparent 30%);
+            z-index: -1;
+            pointer-events: none;
+            transition: transform 0.2s ease-out;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(173, 198, 255, 0.15);
+            border-color: rgba(173, 198, 255, 0.3);
+        }
+
+        /* Custom Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px; width: 16px;
+            border-radius: 50%;
+            background: #adc6ff;
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 0 10px rgba(173, 198, 255, 0.8);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        /* Custom Checkbox */
+        .custom-checkbox {
+            appearance: none;
+            background-color: rgba(255, 255, 255, 0.05);
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.25em;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease-in-out;
+        }
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #adc6ff;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+        .custom-checkbox:checked {
+            border-color: #adc6ff;
+            box-shadow: 0 0 10px rgba(173, 198, 255, 0.3);
+        }
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+
+        /* Image hover zoom */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom-container img { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        .group:hover .img-zoom-container img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- Parallax Background -->
+<div class="parallax-bg" id="parallax-bg"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-glass-border shadow-electric-glow bg-glass-surface flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto left-0 right-0">
+<div class="font-display-lg text-display-lg-mobile tracking-tighter text-on-surface">Shahzaib</div>
+<div class="hidden md:flex gap-8 items-center font-button text-button">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:backdrop-brightness-125 transition-all duration-300" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Dashboard</a>
+</div>
+<div class="flex gap-4 items-center text-primary">
+<button class="hover:backdrop-brightness-125 transition-all duration-300 active:scale-95 flex items-center justify-center p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="hover:backdrop-brightness-125 transition-all duration-300 active:scale-95 flex items-center justify-center p-2 rounded-full hover:bg-white/5 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+</button>
+<button class="hover:backdrop-brightness-125 transition-all duration-300 active:scale-95 flex items-center justify-center p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow max-w-container-max w-full mx-auto px-margin-mobile md:px-margin-desktop pt-[120px] pb-24 flex flex-col md:flex-row gap-gutter">
+<!-- Left Sidebar (Filters) -->
+<aside class="w-full md:w-64 flex-shrink-0 flex flex-col gap-8">
+<div class="sticky top-[120px] glass-card rounded-xl p-6 flex flex-col gap-8">
+<!-- Category Filter -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Categories</h3>
+<div class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+<label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+<input checked="" class="hidden peer" name="category" type="radio"/>
+<div class="w-4 h-4 rounded-full border border-glass-border peer-checked:border-primary peer-checked:bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+                            All Products
+                        </label>
+<label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+<input class="hidden peer" name="category" type="radio"/>
+<div class="w-4 h-4 rounded-full border border-glass-border peer-checked:border-primary peer-checked:bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+                            Neural Interfaces
+                        </label>
+<label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+<input class="hidden peer" name="category" type="radio"/>
+<div class="w-4 h-4 rounded-full border border-glass-border peer-checked:border-primary peer-checked:bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+                            Quantum Cores
+                        </label>
+<label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+<input class="hidden peer" name="category" type="radio"/>
+<div class="w-4 h-4 rounded-full border border-glass-border peer-checked:border-primary peer-checked:bg-primary/20 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+                            Haptic Wearables
+                        </label>
+</div>
+</div>
+<div class="h-px w-full bg-glass-border"></div>
+<!-- Price Range -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface flex justify-between items-center">
+                        Price
+                        <span class="font-label-caps text-label-caps text-primary">$0 - $5000+</span>
+</h3>
+<div class="pt-2">
+<input class="w-full" max="5000" min="0" type="range" value="2500"/>
+</div>
+</div>
+<div class="h-px w-full bg-glass-border"></div>
+<!-- Brands -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Manufacturers</h3>
+<div class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+<label class="flex items-center gap-3 cursor-pointer hover:text-on-surface transition-colors">
+<input checked="" class="custom-checkbox" type="checkbox"/>
+                            Aetheris Prime
+                        </label>
+<label class="flex items-center gap-3 cursor-pointer hover:text-on-surface transition-colors">
+<input class="custom-checkbox" type="checkbox"/>
+                            OmniCorp tech
+                        </label>
+<label class="flex items-center gap-3 cursor-pointer hover:text-on-surface transition-colors">
+<input checked="" class="custom-checkbox" type="checkbox"/>
+                            Stellar Forge
+                        </label>
+<label class="flex items-center gap-3 cursor-pointer hover:text-on-surface transition-colors">
+<input class="custom-checkbox" type="checkbox"/>
+                            Nexus Dynamics
+                        </label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-grow">
+<!-- Top utility bar -->
+<div class="flex justify-between items-end mb-6">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Exploration</h1>
+<p class="font-body-md text-body-md text-text-muted mt-1">Showing 1-12 of 144 high-fidelity assets.</p>
+</div>
+<div class="hidden sm:flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant border-b border-glass-border pb-1 cursor-pointer hover:text-primary transition-colors">
+                    SORT BY: RELEVANCE <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Bento Grid of Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-card glow-hover rounded-xl p-4 flex flex-col gap-4 group transition-all duration-300">
+<div class="img-zoom-container rounded-lg aspect-[4/3] bg-surface-container-high relative">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A macro photograph of an advanced neural headset interface resting on a stark obsidian pedestal. The device is constructed from matte black titanium and features glowing azure optical sensors that cast long reflections. The surrounding environment is completely dark, allowing the stark blue LED elements to emanate a cold, futuristic glow. The image quality implies cutting-edge aerospace engineering combined with luxury minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDromncppNCNvb44DobBpU6gzw9Xw4MbybC9QFFPSxnWkz1KGq16DbN9driJIWyPswT4T_4x5n4xA149vvoudQfW2fVw-nu7Qf9DZ8M0z7lfZBBUUIxD4gp3D9cB2_s7q6MBnIz9rB2IzmHWlze_CnJuTstT9dYOFEDm8p3HXXQY2TFzUYVmLdGWchL07lIK2xs9Mf17mbavGlLeZCuhka4vIPhxmeUe_OqIKSKQ5nHguOCW13sLGYTEUDV7TW_6IYyO94RWFKFERhF"/>
+<div class="absolute top-2 right-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2 py-1 flex items-center gap-1 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted block mb-1">Shahzaib PRIME</span>
+<h2 class="font-body-lg text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Cortex V-Link Headset</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">$1,299</span>
+<button class="magnetic-btn bg-white/5 hover:bg-primary hover:text-on-primary border border-white/10 hover:border-primary text-on-surface font-button text-button w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card glow-hover rounded-xl p-4 flex flex-col gap-4 group transition-all duration-300">
+<div class="img-zoom-container rounded-lg aspect-[4/3] bg-surface-container-high relative">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A dramatic studio shot of a quantum processor unit suspended in mid-air above a reflective dark glass surface. The processor is a complex geometric cube of brushed dark metal interlaced with glowing vibrant violet circuitry lines. Ambient volumetric lighting highlights the sharp edges and intricate technological details. The scene conveys raw computational power within a highly sophisticated, minimalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ84fPugzRzjyAXNBI0VycNph7iBvRHcyBGeWD13zj7-XJ7i8XZFTcjmE3y0UV79_6k32KxFOVplFvvORzaFUP5fdxfVxBuCuCKznwD7U9aDrZCJkJDk9sWR8HJu2Z0mLBEm1pXIZlJTjHU_MNR-chZ2AHhOtmYXrIX1jbrScCY2YlPAgBW6TUqgrV1EzQuo2Er4WLHPx3j5aNfnm_zOxuLcaTjdPsUeiFnfHkS5tDmzh6iMp12Lx32VRrLad7I3j_8AobjuXS1YD8"/>
+<div class="absolute top-2 right-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2 py-1 flex items-center gap-1 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 5.0
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted block mb-1">STELLAR FORGE</span>
+<h2 class="font-body-lg text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Q-Core Nano Processor</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">$4,550</span>
+<button class="magnetic-btn bg-white/5 hover:bg-primary hover:text-on-primary border border-white/10 hover:border-primary text-on-surface font-button text-button w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card glow-hover rounded-xl p-4 flex flex-col gap-4 group transition-all duration-300">
+<div class="img-zoom-container rounded-lg aspect-[4/3] bg-surface-container-high relative">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A sleek, minimalist pair of haptic feedback gloves presented against a completely black void. The gloves are made of an advanced, dark semi-translucent smart-fabric, accented with rigid carbon-fiber knuckle plates and subtle white luminescent seams. The lighting is focused and harsh, emphasizing texture and the premium manufacturing quality of the wearable technology. The overall mood is stealthy, precise, and futuristic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZIAx9UUmOvL5u_7yquvFz4vpvyWExA7AKWRsELROQE0PrrQGGP5VPx-zzcc5leOiB-7kxfsa-7X08UWlyEdE5SZozpRWn1thyhQcoKNReDI5Pz3i_KSX8DGtJsfOxvlBjXifQJ6P55HjQSiMy-jnyWL6ia8if8kx3ZhmLcLQuLGm_3p1aKq5pzzFBE2J6qQSMgj4nYfIMz_-wjcKoOSkB09d3h6zuiQTrDyxDcs5t14fHqkkXoQ9kPp7VPGCtxR8fGFtK4kBNI8-d"/>
+<div class="absolute top-2 right-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2 py-1 flex items-center gap-1 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.7
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted block mb-1">OMNICORP TECH</span>
+<h2 class="font-body-lg text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Tactile Feedback Gloves</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">$850</span>
+<button class="magnetic-btn bg-white/5 hover:bg-primary hover:text-on-primary border border-white/10 hover:border-primary text-on-surface font-button text-button w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card glow-hover rounded-xl p-4 flex flex-col gap-4 group transition-all duration-300">
+<div class="img-zoom-container rounded-lg aspect-[4/3] bg-surface-container-high relative">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A close-up view of a high-end augmented reality visor sitting on a frosted glass desk. The visor features a seamless, edge-to-edge dark mirrored lens wrapping around a brushed aluminum frame. A faint, electric blue data stream reflection is visible on the lens surface. The background is a deeply blurred, moody high-tech laboratory environment. The image screams premium industrial design and cutting-edge optical engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAikT5FuR3CF6GRFtGHdBLc-2CbjTYFEh89a1c1P1k-0r-YY2tWsAyYv_TppK_qE0LghiJP2l9_-yd0ZKNPl-y_tVdZF4UP9Y0WH4IW6H9zqJxQMpIcmEqVHxEzUO6ymzziri-I7LMCbZi0rYhWat-ajYixqHQ_S4GKW44dmBjfPZ2ThdzVsKtfKyVoerzkyorlfDOQejOQBd14JTgw-algHp_WwMFZBlwFRYHX9rbw_xlf6rOcVA9GQ-di8wk3C7IYB84iF41BPsJC"/>
+<div class="absolute top-2 right-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2 py-1 flex items-center gap-1 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.8
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted block mb-1">Shahzaib PRIME</span>
+<h2 class="font-body-lg text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">AR Visor Horizon</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">$2,100</span>
+<button class="magnetic-btn bg-white/5 hover:bg-primary hover:text-on-primary border border-white/10 hover:border-primary text-on-surface font-button text-button w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-card glow-hover rounded-xl p-4 flex flex-col gap-4 group transition-all duration-300">
+<div class="img-zoom-container rounded-lg aspect-[4/3] bg-surface-container-high relative">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="An intricately designed biometric security token resembling a dark, faceted gemstone. It rests on a circular, glowing induction charging pad that emits a soft, pulsing cyan light. The token itself is metallic black, with microscopic engraved circuitry patterns visible under macro focus. The scene is incredibly crisp, minimalist, and utilizes deep shadows to emphasize the glow of the charging base, conveying absolute security and modern luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkGlawG7FgK84O-GkeagHHlZzywjroxYK6I1Na9qQ5VZw_6fJq7ECpuF72u1kNPtTYyUB2bm7QVWhnRBrmjQDJiQQy35S72RrhctHNxJKo0z_D9ZUSVQhqMDW-IoWM2CuPIXfkDa8QbgtssTbocD15_UjDBG4SIqMuIho-rQi-c7i-hUf45ZQgCwfSmPs-ZMrIiQ0iduQF65Y57hzsk-5jEoyDqYJ_2KRnEQURX4P_s5M90lqsSA-lunqAxfXvtsT1T73APODJl4RP"/>
+<div class="absolute top-2 right-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2 py-1 flex items-center gap-1 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.5
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted block mb-1">NEXUS DYNAMICS</span>
+<h2 class="font-body-lg text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Bio-Key Authenticator</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">$350</span>
+<button class="magnetic-btn bg-white/5 hover:bg-primary hover:text-on-primary border border-white/10 hover:border-primary text-on-surface font-button text-button w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="glass-card glow-hover rounded-xl p-4 flex flex-col gap-4 group transition-all duration-300">
+<div class="img-zoom-container rounded-lg aspect-[4/3] bg-surface-container-high relative">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A futuristic wireless neural interface module, shaped like an aerodynamic teardrop, metallic silver and matte black. It is floating slightly above a textured, dark gray acoustical foam surface. Thin, glowing white light strips run along its contours, indicating active status. The lighting setup is dramatic and high-contrast, utilizing cool-toned spotlights to carve the shape out of the darkness, resulting in a highly technical and clinical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgLHtTt_cTnt9epQZXuAIVtWxzZUPnumUlZicYsHKAdhYiteTpipFWMfsFCZLkOR9xxAUtpV4_E4iivq0gOCVmnrSgipAxBe6zawEIPgF08rP0a7Ebe2fm_gGbl_xBErllqKqXU5WmiZ8ILaZikvwrjF0sKmiyHleu9lr0KjH-QobeJPI47TSRQ_YW7WAG6UOjS7xjjGcZkcPKJTQAoEnKm6JPmMb186e2j8keEXGCiMjR4gI4pK4VMEIWHCU2cmnsiv_s6YpTwYH0"/>
+<div class="absolute top-2 right-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-2 py-1 flex items-center gap-1 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted block mb-1">Shahzaib PRIME</span>
+<h2 class="font-body-lg text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Neural Link Module</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">$1,850</span>
+<button class="magnetic-btn bg-white/5 hover:bg-primary hover:text-on-primary border border-white/10 hover:border-primary text-on-surface font-button text-button w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="w-full flex justify-center mt-12">
+<button class="magnetic-btn bg-white/5 border border-white/10 text-on-surface font-button text-button py-3 px-8 rounded-full hover:border-primary hover:text-primary transition-all duration-300 flex items-center gap-2">
+<span class="material-symbols-outlined">sync</span>
+                    Load More Assets
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 bg-surface-container-lowest border-t border-glass-border flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 max-w-container-max mx-auto text-primary font-body-md text-body-md z-10">
+<div class="font-display-lg text-display-lg text-on-surface mb-6 md:mb-0">Shahzaib</div>
+<div class="text-text-muted text-center md:text-left mb-6 md:mb-0">
+            © 2024 Shahzaib NEURAL COMMERCE. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex gap-6">
+<a class="text-text-muted hover:text-on-surface transition-colors duration-300 active:opacity-80" href="#">Privacy Policy</a>
+<a class="text-text-muted hover:text-on-surface transition-colors duration-300 active:opacity-80" href="#">Terms of Service</a>
+<a class="text-text-muted hover:text-on-surface transition-colors duration-300 active:opacity-80" href="#">Shipping Info</a>
+<a class="text-text-muted hover:text-on-surface transition-colors duration-300 active:opacity-80" href="#">API Docs</a>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        // Magnetic Button Effect
+        const magneticButtons = document.querySelectorAll('.magnetic-btn');
+
+        magneticButtons.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Spring physics translation
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+
+        // Parallax Background Effect
+        const parallaxBg = document.getElementById('parallax-bg');
+        
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            
+            parallaxBg.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body></html>

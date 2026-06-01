@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shahzaib - Wishlist &amp; Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5516be",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#414755",
+                        "secondary": "#d0bcff",
+                        "electric-glow": "rgba(0, 122, 255, 0.4)",
+                        "secondary-container": "#571bc1",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-primary": "#005bc1",
+                        "on-background": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "text-muted": "#A1A1AA",
+                        "primary": "#adc6ff",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#8b90a0",
+                        "surface-container": "#201f1f",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-secondary": "#3c0091",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-secondary-container": "#c4abff",
+                        "on-tertiary-container": "#002f38",
+                        "on-primary-container": "#00285c",
+                        "glass-surface": "rgba(255, 255, 255, 0.03)",
+                        "on-primary": "#002e69",
+                        "on-tertiary": "#003640",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "error-container": "#93000a",
+                        "primary-container": "#4b8eff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#009eb9",
+                        "tertiary": "#4cd7f6",
+                        "on-tertiary-fixed": "#001f26",
+                        "tertiary-fixed": "#acedff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-bright": "#3a3939",
+                        "surface-container-high": "#2a2a2a",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001a41",
+                        "surface-tint": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-2xl": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-2xl": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "electric-glow": "0 0 30px rgba(0, 122, 255, 0.15), 0 0 10px rgba(0, 122, 255, 0.1)",
+                        "glass-inset": "inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505; /* Black-point background */
+            color: #e5e2e1;
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Subtle top reflection */
+        }
+        
+        /* Glow on Hover Effect */
+        .glow-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle 800px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(173, 198, 255, 0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .glow-card:hover::before {
+            opacity: 1;
+        }
+
+        .glow-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Magnetic Button Base */
+        .magnetic-btn {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353534; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b90a0; 
+        }
+
+        /* Page transition */
+        .page-enter {
+            animation: fadeSlideUp 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+        
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col page-enter">
+<!-- TopNavBar (Generated from JSON) -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-glass-border shadow-electric-glow bg-glass-surface">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-on-surface hover:backdrop-brightness-125 transition-all duration-300" href="#">
+                Shahzaib
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Shop</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Categories</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">About</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Dashboard</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4 text-primary">
+<button aria-label="favorite" class="hover:backdrop-brightness-125 transition-all duration-300 active:scale-95 text-primary font-bold border-b-2 border-primary pb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button aria-label="shopping_cart" class="hover:backdrop-brightness-125 transition-all duration-300 active:scale-95 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button aria-label="account_circle" class="hover:backdrop-brightness-125 transition-all duration-300 active:scale-95 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="font-display-2xl text-display-lg-mobile md:text-display-2xl text-on-surface mb-4">Cart &amp; Wishlist</h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl">Manage your selected high-performance tech artifacts. Secure your setup before inventory depletes.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Wishlist (Spans 8 cols on desktop) -->
+<div class="col-span-4 md:col-span-8 flex flex-col gap-gutter">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">favorite</span> Your Wishlist
+                </h2>
+<!-- Wishlist Item 1 -->
+<div class="glass-panel glow-card rounded-xl p-6 flex flex-col md:flex-row gap-6 items-center">
+<div class="w-full md:w-32 h-32 bg-surface-container-highest rounded-lg overflow-hidden shrink-0 border border-glass-border">
+<img alt="Mechanical Keyboard" class="w-full h-full object-cover mix-blend-lighten opacity-80 hover:scale-110 transition-transform duration-700 ease-out" data-alt="A sleek, futuristic mechanical keyboard with glowing neon blue accents resting on a dark obsidian surface. The lighting is dramatic and low-key, highlighting the precision engineering and premium materials. The scene conveys a sense of high-end cybernetic technology. The overall color palette is dominated by deep blacks and vibrant electric blues, fitting a premium tech e-commerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZiZZ8Pluv1jQL7i0dKK9GA92ikwLeaRdtBW3nBWRwBjLf8AROUetGbp-iaeGIkKp4pyHdR0Sdq_o8yoTWCMs2WPWKVgC60iBfPQ7m693m_I_XQdiz3poy4fuZpz9bunjoeDKXpG6djPSQPjbUx2H8NlXF0WLLoxYC0ghJqQ3tzqgeg_SeEuNjJyByZOAaBEFZt8GbWpfw7sWHeHHw7Ql0fG70VQrIxT1Ng4QVJHD2ydx3Kr1uR6tbekOUWI65rMmGZk14-d6hQYiy"/>
+</div>
+<div class="flex-grow flex flex-col justify-between h-full w-full">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Aetheris Pro Keyset</h3>
+<span class="font-label-caps text-label-caps text-primary border border-glass-border px-3 py-1 rounded-full bg-glass-surface">IN STOCK</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted mb-4">Opto-mechanical switches with haptic feedback engine.</p>
+</div>
+<div class="flex justify-between items-end w-full">
+<span class="font-display-lg text-headline-md md:text-display-lg text-on-surface">$249.00</span>
+<div class="flex gap-4">
+<button class="font-button text-button text-text-muted hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span> <span class="hidden md:inline">Remove</span>
+</button>
+<button class="magnetic-btn font-button text-button bg-inverse-primary text-on-primary-fixed px-6 py-2 rounded-lg hover:shadow-electric-glow transition-all">
+                                    Add to Cart
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Wishlist Item 2 -->
+<div class="glass-panel glow-card rounded-xl p-6 flex flex-col md:flex-row gap-6 items-center">
+<div class="w-full md:w-32 h-32 bg-surface-container-highest rounded-lg overflow-hidden shrink-0 border border-glass-border">
+<img alt="Neural Headphones" class="w-full h-full object-cover mix-blend-lighten opacity-80 hover:scale-110 transition-transform duration-700 ease-out" data-alt="Premium over-ear noise-canceling headphones crafted from brushed gunmetal and matte black polycarbonate. They sit on a reflective dark glass surface, illuminated by a single soft overhead light source that casts subtle blue rim lighting. The image suggests audiophile-grade quality and futuristic design. The composition is minimal and focused entirely on the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTbrFv7yykvs4rWyh-HDn2ZhCgj_z7zvxQj5BbQ9DAXwtiimEvh5jr4b4idIwXwl5CmCi8RWH-V8949XiovJWtcMuru8oLp6qDxnHqKMjoIvoshEt_CPM-UwVFdlR6Smel3eOGcDE-TnQ9PHEy6RPM0RT1dVwI2jB_E3NOiO3O7W9cEgLqTMNqTUxNAxip3JiTOOkGBkNd89YQUIrat28oFJTEPe1Qbab7nFNIhQ7drQ4gSAnedEuJAcGkqqNCXrRWb3B6bUE8knnT"/>
+</div>
+<div class="flex-grow flex flex-col justify-between h-full w-full">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Neural Node ANC</h3>
+<span class="font-label-caps text-label-caps text-text-muted border border-glass-border px-3 py-1 rounded-full bg-glass-surface">LOW STOCK</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted mb-4">Spatial audio array with active environment mapping.</p>
+</div>
+<div class="flex justify-between items-end w-full">
+<span class="font-display-lg text-headline-md md:text-display-lg text-on-surface">$399.00</span>
+<div class="flex gap-4">
+<button class="font-button text-button text-text-muted hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span> <span class="hidden md:inline">Remove</span>
+</button>
+<button class="magnetic-btn font-button text-button bg-glass-surface border border-glass-border text-on-surface px-6 py-2 rounded-lg hover:bg-glass-border transition-all">
+                                    Add to Cart
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Cart Summary (Spans 4 cols on desktop) -->
+<div class="col-span-4 md:col-span-4 flex flex-col gap-gutter">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shopping_cart</span> Cart Summary
+                </h2>
+<div class="glass-panel glow-card rounded-xl p-6 flex flex-col h-full sticky top-32">
+<!-- Cart Items Preview -->
+<div class="mb-8 space-y-4">
+<div class="flex justify-between items-center pb-4 border-b border-glass-border">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded border border-glass-border overflow-hidden">
+<img alt="Monitor" class="w-full h-full object-cover mix-blend-lighten opacity-80" data-alt="A minimalist, futuristic smart display monitor with ultra-thin bezels. It displays a highly abstract, generative art visual on its screen. The monitor sits on a polished black desk in a dimly lit studio environment. Soft blue and white ambient lighting enhances its sleek, aerospace-inspired design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGkNsLXd7YVOHKpDa2WXC4Bua4-L3RwAKkzb-3DZ2TwfGUK-7vArqEjdsroe_dWCEitSj33QpTOAnXErajvxRAjDinw9IGNaaTTuLfVFUztjY5sujykr3lsWoQelqXWNggBYvWvI-9xIsxGN2rCh7MeSV8V4Fs-Rnn_VLDQM_f-DQ6yMnYnM25T5juG3V1XhRydVJ3xV-QSsVnePnLM0_7kEmdZazaWfWb0wnIhOy_mTW9eD57d7Cs7vv-Y6b-eCX-xdcs8ZQ9VKW"/>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Void Display 27"</p>
+<p class="font-label-caps text-label-caps text-text-muted">QTY: 1</p>
+</div>
+</div>
+<span class="font-button text-button text-on-surface">$899.00</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-glass-border">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded border border-glass-border overflow-hidden">
+<span class="material-symbols-outlined text-text-muted flex w-full h-full justify-center items-center">cable</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Optic Cable</p>
+<p class="font-label-caps text-label-caps text-text-muted">QTY: 2</p>
+</div>
+</div>
+<span class="font-button text-button text-on-surface">$58.00</span>
+</div>
+</div>
+<!-- Calculation -->
+<div class="space-y-3 mb-8">
+<div class="flex justify-between font-body-md text-body-md text-text-muted">
+<span>Subtotal</span>
+<span class="text-on-surface">$957.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-text-muted">
+<span>Tax</span>
+<span class="text-on-surface">$95.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-text-muted">
+<span>Shipping</span>
+<span class="italic text-sm">Calculated at checkout</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-end mb-6 pt-6 border-t border-glass-border">
+<span class="font-headline-md text-headline-md text-on-surface">Total</span>
+<span class="font-display-lg text-headline-md md:text-display-lg text-primary">$1,052.00</span>
+</div>
+<button class="magnetic-btn w-full bg-inverse-primary text-on-primary-fixed font-button text-button py-4 rounded-lg flex justify-center items-center gap-2 hover:shadow-electric-glow transition-all duration-300">
+                            Checkout Now <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Generated from JSON) -->
+<footer class="w-full relative bottom-0 border-t border-glass-border bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8 md:gap-0">
+<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                Shahzaib
+            </div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">API Docs</a>
+</nav>
+<div class="font-label-caps text-label-caps text-text-muted text-center md:text-right">
+                © 2024 Shahzaib NEURAL COMMERCE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Glow Effect Logic
+        document.querySelectorAll('.glow-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Magnetic Button Logic
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Limit the movement radius
+                const xMove = Math.max(-10, Math.min(10, x * 0.3));
+                const yMove = Math.max(-10, Math.min(10, y * 0.3));
+
+                btn.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Categories - Shahzaib</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#5516be",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#414755",
+                        "secondary": "#d0bcff",
+                        "electric-glow": "rgba(0, 122, 255, 0.4)",
+                        "secondary-container": "#571bc1",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-primary": "#005bc1",
+                        "on-background": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "text-muted": "#A1A1AA",
+                        "primary": "#adc6ff",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#8b90a0",
+                        "surface-container": "#201f1f",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-secondary": "#3c0091",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-secondary-container": "#c4abff",
+                        "on-tertiary-container": "#002f38",
+                        "on-primary-container": "#00285c",
+                        "glass-surface": "rgba(255, 255, 255, 0.03)",
+                        "on-primary": "#002e69",
+                        "on-tertiary": "#003640",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "error-container": "#93000a",
+                        "primary-container": "#4b8eff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#009eb9",
+                        "tertiary": "#4cd7f6",
+                        "on-tertiary-fixed": "#001f26",
+                        "tertiary-fixed": "#acedff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-bright": "#3a3939",
+                        "surface-container-high": "#2a2a2a",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001a41",
+                        "surface-tint": "#adc6ff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "display-2xl": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-2xl": ["72px", { lineHeight: "80px", letterSpacing: "-0.04em", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "button": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "500" }],
+                        "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+        }
+        
+        .bento-card {
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .bento-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .glow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle 400px at var(--mouse-x) var(--mouse-y), rgba(0, 122, 255, 0.15), transparent 80%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+        
+        .bento-card:hover .glow-overlay {
+            opacity: 1;
+        }
+        
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-glass-surface border-b border-glass-border shadow-electric-glow">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-on-surface">
+                Shahzaib
+            </div>
+<nav class="hidden md:flex gap-8 items-center font-button text-button">
+<a class="text-on-surface-variant hover:text-on-surface hover:backdrop-brightness-125 transition-all duration-300" href="#">Shop</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-200 transition-transform" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:backdrop-brightness-125 transition-all duration-300" href="#">About</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:backdrop-brightness-125 transition-all duration-300" href="#">Dashboard</a>
+</nav>
+<div class="flex gap-4 items-center">
+<button class="text-primary hover:backdrop-brightness-125 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="text-primary hover:backdrop-brightness-125 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="text-primary hover:backdrop-brightness-125 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-12 animate-fade-in-up">
+<h1 class="font-display-lg-mobile md:font-display-2xl text-display-lg-mobile md:text-display-2xl text-on-surface mb-4">Ecosystem Architecture</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Explore our curated catalog of high-performance cybernetic enhancements, precision hardware, and integrated neural solutions designed for the neo-futuristic paradigm.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Neural Interfaces (Featured Large) -->
+<a class="bento-card md:col-span-8 h-[400px] md:h-[500px] rounded-xl bg-surface-container-low border border-glass-border overflow-hidden group animate-fade-in-up stagger-1 block cursor-pointer" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-500 group-hover:scale-105 transform" data-alt="A highly detailed 3D rendering of a sleek, bioluminescent neural interface device floating in a void of pure black #050505. The device is constructed of frosted glass and obsidian metal, emitting a soft, pulsing electric blue glow. Thin, razor-sharp geometric lines crisscross its surface, resembling high-end aerospace engineering. The overall aesthetic is neo-futuristic, clean, and highly technical, lit with cinematic rim lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOfQK0M6F5zNp-r16X7sogiaq633vDSQGOTy9fuorAVEuy82_W8WJ60_5327GqOyXCoGZo675i3dwHZXjOsOVGmkkHUNoa7gyBfHiXYqVMNiCoZFQOngc5skoNj9H2RpOX9-aZjvO2E0Ojr-QaGCk-8k2bD6xYTUGxhIqBOC84hSxyzZvf9UwfNSHpXjxRt5hVdmTyb1A84Ka9VlhKhgcNCP-Qe69C-6cyS8LdjkMGvM_n_JJQCzr7gVqpQgJLUJwZDjI50MxTQFlg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute inset-0 backdrop-blur-[2px]"></div>
+<div class="glow-overlay"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-20">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block px-3 py-1 bg-glass-surface border border-glass-border rounded-full font-label-caps text-label-caps text-primary mb-4 backdrop-blur-md">CORE SYSTEM</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Neural Interfaces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md hidden md:block">Direct cortex integration protocols and hardware links for seamless human-machine symbiosis.</p>
+</div>
+<div class="text-right">
+<span class="font-display-2xl text-display-2xl text-primary opacity-50 block leading-none">42</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">UNITS</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Quantum Cores -->
+<a class="bento-card md:col-span-4 h-[400px] md:h-[500px] rounded-xl bg-surface-container-low border border-glass-border overflow-hidden group animate-fade-in-up stagger-2 block cursor-pointer" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105 transform" data-alt="A macro shot of a crystalline quantum processing core suspended in a dark, high-tech environment. The core is geometrically complex, glowing with an intense inner light of cyan and violet against a deep #050505 black background. Subtle translucent data streams and optical refractions suggest immense computational power. The lighting highlights the razor-thin metallic framing holding the crystal, evoking luxury consumer electronics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWeuMHksZSGZsfjUvjCmOP9EIYx40Fr6zpA_bPqa-EgIeQ_5Ac4fe1KewzYij4wM1KhsqKwbfkM-S3jJg5uW6prhNqILp_rYQQAdKXfENNJqjP0CiclZM4wZrhpUz2LsuHY6DoE6b4Ihb_svD5YbuEfcKv68o44pPcg-vZpD65k4yzdVB9IgM_0JvNyqlP-mMlr-XxuHNd_2zuwVqpHIhkf2UeTx-dHvqcZALF7n8nxj-Gxsgw6Y_zLTliUuumPFN3hOreSIowpDTL');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="glow-overlay"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col h-full justify-between">
+<div class="self-end">
+<div class="w-12 h-12 rounded-full bg-glass-surface border border-glass-border flex items-center justify-center backdrop-blur-md text-primary">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Quantum Cores</h2>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary">18 UNITS</span>
+<span class="w-1 h-1 rounded-full bg-on-surface-variant"></span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Haptic Wearables -->
+<a class="bento-card md:col-span-5 h-[350px] rounded-xl bg-surface-container-low border border-glass-border overflow-hidden group animate-fade-in-up stagger-3 block cursor-pointer" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-500 group-hover:scale-105 transform" data-alt="A sleek, minimalist haptic feedback glove or wearable device resting on a reflective obsidian surface. The device features matte black textures contrasted with glowing electric blue seam lines and micro-LED indicators. The environment is dark and moody, lit with a single spotlight that creates deep spatial depth and emphasizes the premium, aerospace-grade materials of the wearable tech." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCboBiLTXy92oH8ezDSyo_L0k0aVT0NnpGSrnoKv35GLsRo2qO0fczrpzMILKj_7TpddUs_MiGYP7RrloSBCqLOSu_5Y3CBbikc5X-zMPbF08ZawuQyEC3gnSXFM7Lgqwul80d-AztuSZgWxN1ZOOWDrj3Df2exNw09fkC3934pd4QDn83oh-odHN_4jKIcvaLF_IwRgGPSEJ_uGQ6eiO8zPQ1CMcUhM_5JHCWvJ5tx-bUKlRrRhO1NWvM4oqq-Af-v2OE9loNBbjeO');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="glow-overlay"></div>
+<div class="absolute top-0 left-0 p-8 w-full h-full z-20 flex flex-col justify-center max-w-[70%]">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-3">Haptic Wearables</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Tactile synthesis modules for physical-digital interaction.</p>
+<div class="mt-auto">
+<span class="font-label-caps text-label-caps text-primary border-b border-primary/30 pb-1 hover:border-primary transition-colors">EXPLORE 24 ITEMS</span>
+</div>
+</div>
+</a>
+<!-- Optical Optics -->
+<a class="bento-card md:col-span-3 h-[350px] rounded-xl bg-surface-container-low border border-glass-border overflow-hidden group animate-fade-in-up stagger-4 block cursor-pointer flex flex-col items-center justify-center text-center p-8 relative" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-40 transition-opacity duration-500" data-alt="An abstract macro rendering of advanced optical lenses and sensor arrays in a dark studio setting. Layers of glass elements reflect subtle electric blue and deep cyan neon lights. The composition is highly symmetric, emphasizing technical precision and the translucency of the materials against a pure black void." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArPTTn7qCeV3HMy0Ls17TQ7KX6H0ECH3x3JZKs_ZYJu-RP3qT1MPn87mohKruVjNVHAK5dvk2fUq9EWRNEtWWEW4MvYTp28hfyeWEunn1oTtEXTlox-KDi6uKqMlzZKyS8zcqRX-a24TQc5BMExnB73UZC1SLXkZ_-TNBoMYSy-ZgeMtPHu2bsYXMWoSUlpF0UHiNBG-TxCDousgNiKOXD5zp6-s88mAMIK4fHm5eAi58iDN8qas_11YkhPRquXIe7-sRNfUaRfSaN');"></div>
+<div class="glow-overlay"></div>
+<div class="w-16 h-16 rounded-full bg-glass-surface border border-glass-border flex items-center justify-center backdrop-blur-md text-primary mb-4 z-20">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 z-20">Optical Augments</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant z-20">12 UNITS</span>
+</a>
+<!-- Auxiliary Power -->
+<a class="bento-card md:col-span-4 h-[350px] rounded-xl bg-surface-container-low border border-glass-border overflow-hidden group animate-fade-in-up stagger-5 block cursor-pointer flex flex-col p-8 relative justify-end" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low to-surface-container-high opacity-80"></div>
+<div class="absolute top-0 right-0 p-8 z-20">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20 group-hover:opacity-100 transition-opacity duration-300" data-icon="battery_charging_full">battery_charging_full</span>
+</div>
+<div class="glow-overlay"></div>
+<div class="z-20">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Auxiliary Power</h2>
+<span class="font-label-caps text-label-caps text-primary">RESERVE SYSTEMS (8)</span>
+</div>
+</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 bg-surface-container-lowest border-t border-glass-border">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                Shahzaib
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<a class="text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300 active:opacity-80" href="#">Privacy Policy</a>
+<a class="text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300 active:opacity-80" href="#">Terms of Service</a>
+<a class="text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300 active:opacity-80" href="#">Shipping Info</a>
+<a class="text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300 active:opacity-80" href="#">API Docs</a>
+</nav>
+<div class="font-body-md text-body-md text-text-muted text-center md:text-right">
+                © 2024 Shahzaib NEURAL COMMERCE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Glow effect on hover for Bento Cards
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shahzaib - Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#5516be",
+                      "inverse-surface": "#e5e2e1",
+                      "outline-variant": "#414755",
+                      "secondary": "#d0bcff",
+                      "electric-glow": "rgba(0, 122, 255, 0.4)",
+                      "secondary-container": "#571bc1",
+                      "surface-container-highest": "#353534",
+                      "primary-fixed": "#d8e2ff",
+                      "inverse-primary": "#005bc1",
+                      "on-background": "#e5e2e1",
+                      "surface-variant": "#353534",
+                      "text-muted": "#A1A1AA",
+                      "primary": "#adc6ff",
+                      "surface-container-low": "#1c1b1b",
+                      "outline": "#8b90a0",
+                      "surface-container": "#201f1f",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#313030",
+                      "background": "#131313",
+                      "on-secondary": "#3c0091",
+                      "on-surface-variant": "#c1c6d7",
+                      "surface": "#131313",
+                      "on-error-container": "#ffdad6",
+                      "surface-dim": "#131313",
+                      "secondary-fixed": "#e9ddff",
+                      "on-secondary-fixed": "#23005c",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-secondary-container": "#c4abff",
+                      "on-tertiary-container": "#002f38",
+                      "on-primary-container": "#00285c",
+                      "glass-surface": "rgba(255, 255, 255, 0.03)",
+                      "on-primary": "#002e69",
+                      "on-tertiary": "#003640",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "error-container": "#93000a",
+                      "primary-container": "#4b8eff",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "on-surface": "#e5e2e1",
+                      "tertiary-container": "#009eb9",
+                      "tertiary": "#4cd7f6",
+                      "on-tertiary-fixed": "#001f26",
+                      "tertiary-fixed": "#acedff",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-bright": "#3a3939",
+                      "surface-container-high": "#2a2a2a",
+                      "glass-border": "rgba(255, 255, 255, 0.1)",
+                      "on-error": "#690005",
+                      "on-primary-fixed": "#001a41",
+                      "surface-tint": "#adc6ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-2xl": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "button": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "display-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-2xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "button": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        
+        .bento-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Physical glass edge */
+        }
+        
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .bento-card:hover::before {
+            opacity: 1;
+        }
+        
+        .bento-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glow-tier {
+            box-shadow: 0 0 30px rgba(0, 122, 255, 0.15);
+            border: 1px solid rgba(0, 122, 255, 0.4);
+        }
+        
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-glass-border shadow-electric-glow bg-glass-surface">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-on-surface">
+                Shahzaib
+            </div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Shop</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">Categories</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 duration-300" href="#">About</a>
+<a class="font-button text-button text-primary font-bold border-b-2 border-primary pb-1 hover:backdrop-brightness-125 duration-300 transform scale-95 transition-transform" href="#">Dashboard</a>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary hover:backdrop-brightness-125 transition-all duration-300 cursor-pointer">favorite</span>
+<span class="material-symbols-outlined text-primary hover:backdrop-brightness-125 transition-all duration-300 cursor-pointer">shopping_cart</span>
+<span class="material-symbols-outlined text-primary hover:backdrop-brightness-125 transition-all duration-300 cursor-pointer">account_circle</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[100px] pb-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto min-h-screen">
+<!-- Welcome Hero -->
+<header class="mb-12 mt-8 animate-fade-in-up">
+<h1 class="font-display-2xl text-display-lg-mobile md:text-display-2xl text-on-surface mb-2">Hello, Shahzaib.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Here's a summary of your premium experience.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter auto-rows-[minmax(200px,_auto)]">
+<!-- Tier Status Card (Spans 8 columns on desktop) -->
+<div class="bento-card glow-tier rounded-xl p-8 col-span-4 md:col-span-8 flex flex-col justify-between group">
+<div class="bento-content h-full flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-label-caps text-label-caps text-primary mb-2 opacity-80 uppercase">Membership Status</p>
+<h2 class="font-headline-md text-headline-md text-on-surface">Your Shahzaib Tier: Platinum</h2>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<div class="mt-auto">
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-right">15,000 pts to Titanium</p>
+</div>
+</div>
+</div>
+<!-- Profile Settings Mini-Widget (Spans 4 columns) -->
+<div class="bento-card rounded-xl p-8 col-span-4 md:col-span-4 flex flex-col justify-between cursor-pointer group">
+<div class="bento-content h-full flex flex-col">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center border border-glass-border">
+<span class="material-symbols-outlined text-on-surface">manage_accounts</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Profile Settings</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Manage Preferences</p>
+</div>
+</div>
+<div class="mt-auto flex justify-end">
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Recent Orders (Spans 6 columns) -->
+<div class="bento-card rounded-xl p-8 col-span-4 md:col-span-6 flex flex-col">
+<div class="bento-content h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Orders</h3>
+<a class="font-label-caps text-label-caps text-primary hover:underline uppercase" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-4 mt-auto">
+<!-- Order Item 1 -->
+<div class="flex items-center justify-between p-4 bg-glass-surface rounded-lg border border-glass-border">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-glass-border flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+</div>
+<div>
+<p class="font-button text-button text-on-surface">Quantum Core V2</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Delivered • Oct 12</p>
+</div>
+</div>
+<span class="font-button text-button text-primary">$1,250</span>
+</div>
+<!-- Order Item 2 -->
+<div class="flex items-center justify-between p-4 bg-glass-surface rounded-lg border border-glass-border">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-glass-border flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+</div>
+<div>
+<p class="font-button text-button text-on-surface">Neural Interface Band</p>
+<p class="font-label-caps text-label-caps text-tertiary uppercase">In Transit</p>
+</div>
+</div>
+<span class="font-button text-button text-primary">$450</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Saved Addresses (Spans 6 columns) -->
+<div class="bento-card rounded-xl p-8 col-span-4 md:col-span-6 flex flex-col">
+<div class="bento-content h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Saved Addresses</h3>
+<button class="w-8 h-8 rounded-full bg-glass-surface border border-glass-border flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm text-primary">add</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-4 mt-auto">
+<div class="p-4 bg-glass-surface rounded-lg border border-glass-border relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm text-on-surface-variant cursor-pointer hover:text-primary">edit</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">home</span>
+<div>
+<p class="font-button text-button text-on-surface mb-1">Primary Residence</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 text-sm">1024 Neo-Tokyo Way<br/>Sector 7, Neo-Tokyo, NT 90210</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 border-t border-glass-border bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg text-on-surface mb-6 md:mb-0">
+                Shahzaib
+            </div>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-300" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-300" href="#">API Docs</a>
+</div>
+<div class="font-body-md text-body-md text-text-muted text-sm text-center md:text-right">
+                © 2024 Shahzaib NEURAL COMMERCE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / card.clientWidth) * 100;
+                    const y = ((e.clientY - rect.top) / card.clientHeight) * 100;
+                    
+                    card.style.setProperty('--mouse-x', `${x}%`);
+                    card.style.setProperty('--mouse-y', `${y}%`);
+                });
+            });
+            
+            // Simple fade-in animation trigger
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.bento-card').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

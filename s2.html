@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shahzaib - Product Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5516be",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#414755",
+                        "secondary": "#d0bcff",
+                        "electric-glow": "rgba(0, 122, 255, 0.4)",
+                        "secondary-container": "#571bc1",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-primary": "#005bc1",
+                        "on-background": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "text-muted": "#A1A1AA",
+                        "primary": "#adc6ff",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#8b90a0",
+                        "surface-container": "#201f1f",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-secondary": "#3c0091",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-secondary-container": "#c4abff",
+                        "on-tertiary-container": "#002f38",
+                        "on-primary-container": "#00285c",
+                        "glass-surface": "rgba(255, 255, 255, 0.03)",
+                        "on-primary": "#002e69",
+                        "on-tertiary": "#003640",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "error-container": "#93000a",
+                        "primary-container": "#4b8eff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#009eb9",
+                        "tertiary": "#4cd7f6",
+                        "on-tertiary-fixed": "#001f26",
+                        "tertiary-fixed": "#acedff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-bright": "#3a3939",
+                        "surface-container-high": "#2a2a2a",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001a41",
+                        "surface-tint": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-2xl": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-2xl": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505; /* Black-point background */
+            color: #e5e2e1;
+        }
+        
+        .magnetic-hover {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(0, 122, 255, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .glow-effect:hover {
+            box-shadow: 0 0 50px rgba(0, 122, 255, 0.3);
+        }
+
+        .glass-reflection {
+            position: relative;
+        }
+        .glass-reflection::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-lg overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar JSON Component -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-glass-border shadow-electric-glow bg-glass-surface">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-on-surface">
+                Shahzaib
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-button text-button text-primary font-bold border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 transition-all duration-300" href="#">Categories</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 transition-all duration-300" href="#">About</a>
+<a class="font-button text-button text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-brightness-125 transition-all duration-300" href="#">Dashboard</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="text-primary hover:backdrop-brightness-125 transition-all duration-300 hover:scale-95">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="text-primary hover:backdrop-brightness-125 transition-all duration-300 hover:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="text-primary hover:backdrop-brightness-125 transition-all duration-300 hover:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] pb-margin-desktop px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Bento Grid Layout for Product Details -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-margin-desktop">
+<!-- Left: 3D Model Viewer (Spans 8 cols on desktop) -->
+<div class="md:col-span-8 bg-glass-surface border border-glass-border rounded-xl backdrop-blur-[20px] glass-reflection relative h-[500px] md:h-[700px] flex items-center justify-center overflow-hidden group">
+<!-- 3D Background Atmosphere -->
+<div class="absolute inset-0 bg-gradient-to-br from-[#050505] to-surface-container opacity-80 pointer-events-none z-0"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,122,255,0.05)_0%,transparent_70%)] pointer-events-none z-0"></div>
+<!-- 3D Placeholder -->
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+                    {{DATA:ANIMATION:PRODUCT_3D}}
+                </div>
+<!-- Viewer Controls -->
+<div class="absolute bottom-6 right-6 z-20 flex gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-low border border-glass-border flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-low border border-glass-border flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-low border border-glass-border flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="360">360</span>
+</button>
+</div>
+</div>
+<!-- Right: Floating Glass Card (Spans 4 cols on desktop) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Core Product Info Card -->
+<div class="bg-[rgba(255,255,255,0.08)] border border-glass-border rounded-xl backdrop-blur-[40px] p-8 glass-reflection glow-effect flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary border border-glass-border px-3 py-1 rounded-full w-max bg-glass-surface">
+                                NEW RELEASE
+                            </span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight tracking-tight mt-2">
+                                Nexus Core vX
+                            </h1>
+</div>
+<div class="bg-error/20 border border-error/30 text-error font-label-caps text-label-caps px-2 py-1 rounded">
+                            SALE
+                        </div>
+</div>
+<div class="flex items-end gap-4">
+<span class="font-headline-md text-headline-md text-primary">$1,249.00</span>
+<span class="font-body-md text-body-md text-text-muted line-through mb-1">$1,499.00</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(76,215,246,0.8)] animate-pulse"></div>
+<span class="font-body-md text-body-md text-tertiary">In Stock (Ready to Ship)</span>
+</div>
+<!-- Rating -->
+<div class="flex items-center gap-2 mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star_half">star_half</span>
+</div>
+<span class="font-body-md text-body-md text-text-muted">4.8 (124 Reviews)</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Engineered with aerospace-grade titanium and an advanced neural processing unit, the Nexus Core vX redefines computational boundaries in a hyper-compact form factor.
+                    </p>
+<!-- Specifications Accordion/List -->
+<div class="border-t border-glass-border pt-6 mt-2 flex flex-col gap-4">
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">Specifications</h3>
+<div class="flex justify-between items-center border-b border-glass-border border-opacity-30 pb-2">
+<span class="font-body-md text-body-md text-text-muted">Material</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Anodized Titanium</span>
+</div>
+<div class="flex justify-between items-center border-b border-glass-border border-opacity-30 pb-2">
+<span class="font-body-md text-body-md text-text-muted">Dimensions</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">14.2 x 8.5 x 2.1 cm</span>
+</div>
+<div class="flex justify-between items-center pb-2">
+<span class="font-body-md text-body-md text-text-muted">Weight</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">185g</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-3 mt-4">
+<button class="magnetic-button w-full bg-glass-surface border border-primary text-primary font-button text-button py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+<button class="magnetic-button w-full bg-primary text-on-primary font-button text-button py-4 rounded-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(173,198,255,0.4)] hover:shadow-[0_0_30px_rgba(173,198,255,0.6)] transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+                            Buy Now
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cross-sell Section -->
+<section class="mt-24 mb-12">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-display-lg text-display-lg-mobile md:text-[32px] md:leading-[40px] text-on-surface tracking-tight">
+                    Customers also viewed
+                </h2>
+<a class="font-button text-button text-primary hover:underline hidden md:block" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-glass-surface border border-glass-border rounded-xl p-4 glass-reflection hover:bg-[rgba(255,255,255,0.05)] transition-colors group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg mb-4 overflow-hidden relative">
+<img alt="Tech Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80" data-alt="A sleek, futuristic consumer electronics device resting on a dark reflective surface. The product features matte black finishes with sharp, angular geometric lines reminiscent of stealth aircraft. Subtle electric blue LED accents glow from its seams. The lighting is moody, cinematic, and high-contrast, emphasizing the premium Neo-Futuristic aesthetic of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvvtBKzwsD6aA-PMrZrUBGnpA2HbQjTYHolJicedeFETkwzfyQbjApFoW1QeByTbTtxZwb2xY6toYdAlhTJVSmmZSXPiJUqXreWT3Exiw37zHdjKbncfUYJDzjDPmAJfA1SuH0s0erhXHAllgf4LNz9g9UwcQBgG102qjenNOpW53Zoezhdaf9lImmP-HfKOBrNwDkP4o4JVSHkz6ZdPCBG_antqP3S9WHT1Gi_8JX_ATmV6IKeK_ocuxGoiyYb_AMGubEi796HR70"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted">AUDIO</span>
+<h4 class="font-headline-md text-[18px] leading-[24px] text-on-surface truncate">Sonic Pulse V2</h4>
+<span class="font-body-md text-body-md text-primary mt-1">$299.00</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-glass-surface border border-glass-border rounded-xl p-4 glass-reflection hover:bg-[rgba(255,255,255,0.05)] transition-colors group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg mb-4 overflow-hidden relative">
+<img alt="Tech Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80" data-alt="A sophisticated smart accessory featuring a seamless glass and obsidian unibody construction. The device is displayed against a pure black-point background with intense, localized spotlights creating dramatic specular highlights on the glass edges. The aesthetic is extremely minimalist, high-tech, and luxurious, perfectly aligned with modern spatial design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABrTR7jiGjw2JB65KYqr6k6M4VMigN-zDkMRlM6KRoMfkcc0tspe2saEycq690YMTaWdS207msT6biROc_wcdMBsGHvFeDY18mGuS5ML_PWurI0MuPztTDgzLTbfEHbrvWUNwIT-1NIEVgGhQR7QYWMLHRKhjsugw9UeQSq_QBqit_55EHQvctihZZ6C7ag3IQhtWDLza_XKKjosIAVTjTWbvSQDw63iXTvBR1Q5haKL4LWkU5-AS2DNtSAdNbyMsh1UgjkWbCU2Qf"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted">WEARABLE</span>
+<h4 class="font-headline-md text-[18px] leading-[24px] text-on-surface truncate">Aura Band Pro</h4>
+<span class="font-body-md text-body-md text-primary mt-1">$149.00</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-glass-surface border border-glass-border rounded-xl p-4 glass-reflection hover:bg-[rgba(255,255,255,0.05)] transition-colors group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg mb-4 overflow-hidden relative">
+<img alt="Tech Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80" data-alt="An abstract, high-end peripheral device designed for professional creators. The object combines brushed aluminum and frosted acrylic materials. It is photographed in a studio setting with a dark, moody atmosphere. A soft, luminous glow emanates from behind the device, separating it from the pure black background and highlighting its precise, manufacturing-grade tolerances." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiAo_Bn6ZqTQfYcSJNRnf3btM2mlrpJqHc9NHCQZregPehuFA0Esa7YEt0KUIrdSBkWb1IczVImHyKhY-4SgBEevtFvAiCGMAiyeEnEGmN9T3C_V1CSU74yhttRl9L8JwwmYtR63QURwQrya3RTU0ZoEGas5NbqR5nAnEUfuAHO2g2FWPdeMLaKgkv8Hu1FIs-rEjEIe7Mhtz9j9cjyhK0Wmr3hmlexXr3mhFLURuF2iU8G9mWsqCL0Bx4XhjLLJJZ4bqnz88AP5_f"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted">INPUT</span>
+<h4 class="font-headline-md text-[18px] leading-[24px] text-on-surface truncate">Tactile Deck</h4>
+<span class="font-body-md text-body-md text-primary mt-1">$199.00</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-glass-surface border border-glass-border rounded-xl p-4 glass-reflection hover:bg-[rgba(255,255,255,0.05)] transition-colors group cursor-pointer md:hidden lg:block">
+<div class="aspect-square bg-surface-container rounded-lg mb-4 overflow-hidden relative">
+<img alt="Tech Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80" data-alt="A cutting-edge visual display unit showcasing a translucent, bezel-less screen. The product sits on an invisible pedestal in a void-like black space. Vibrant, abstract geometric patterns in neon blue and deep violet are displayed on the screen, contrasting sharply with the dark environment. The overall mood conveys advanced spatial computing and cinematic depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyPZuOEWt-cE54EsF1ykY7H5wqq8pY2gQr6GU_ih0EQwCNRqDUazyYEa5SYP1tY9hVk2nxiGcPIbgrD0bp1E6Qn6oxJMrJAFjUevIAI8mcezyf73ieQShaGVaCWbV7Hgmfzr0MZ2Pjisq3ARwKzM8om6LXZoyCDerqNYTiS6TFJuVLnTztnV_JZVBjV914OsE4sQikTZXxedgco7iPp9odhU_dqjPD1DkNz0yi6jut4Tesd41RyoF7Chd9kujR2m2QtYdb__ToC2Kx"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted">DISPLAY</span>
+<h4 class="font-headline-md text-[18px] leading-[24px] text-on-surface truncate">Holo Panel X</h4>
+<span class="font-body-md text-body-md text-primary mt-1">$899.00</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer JSON Component -->
+<footer class="w-full relative bottom-0 border-t border-glass-border bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                Shahzaib
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">API Docs</a>
+</div>
+<div class="font-body-md text-body-md text-text-muted text-center md:text-right">
+                © 2024 Shahzaib NEURAL COMMERCE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Magnetic Button Effect
+        document.querySelectorAll('.magnetic-button').forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Keep movement subtle (max 10px)
+                const moveX = Math.max(-10, Math.min(10, x * 0.1));
+                const moveY = Math.max(-10, Math.min(10, y * 0.1));
+                
+                btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                btn.classList.add('magnetic-hover');
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+                setTimeout(() => btn.classList.remove('magnetic-hover'), 300);
+            });
+        });
+    </script>
+</body></html>
